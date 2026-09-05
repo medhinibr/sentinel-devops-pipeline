@@ -36,3 +36,5 @@ By utilizing Neon PostgreSQL, the project implements a serverless database strat
 ### 4. Enterprise Observability
 Real-time monitoring is achieved through a Grafana Cloud dashboard. The system tracks data ingestion frequency and market trends, providing the observability required for Site Reliability Engineering (SRE) standards.
 
+## Resilience and Problem Solving: The Cloud-Native Pivot
+This project serves as a case study in infrastructure resilience. During development, the local WSL/Docker environment experienced a critical signature corruption failure. Rather than allowing infrastructure downtime to stall the project, the workflow was strategically pivoted to a Cloud-Native architecture using GitHub Actions and managed cloud services. This transition demonstrates the ability to maintain continuous delivery and system uptime regardless of local hardware limitations.
