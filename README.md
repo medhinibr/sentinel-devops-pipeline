@@ -23,3 +23,9 @@ The pipeline follows a modular architecture to ensure separation of concerns:
 
 ### 1. Optimized Containerization
 The project utilizes a multi-stage Docker build strategy. This approach separates the build-time dependencies from the runtime environment, resulting in a lightweight production image. This reduces the attack surface and ensures faster deployment cycles in a cloud environment.
+
+### 2. Automated DevSecOps Pipeline
+A robust CI/CD pipeline is implemented to enforce security and reliability standards:
+* **Automated Builds:** Triggered on every push to the main branch.
+* **Vulnerability Assessment:** Trivy scans the Docker image for Critical and High vulnerabilities (CVEs) before execution.
+* **Secret Management:** Sensitive credentials, including database connection strings, are managed via GitHub Encrypted Secrets, preventing exposure in the source code.
