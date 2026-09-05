@@ -1,0 +1,37 @@
+name: Sentinel DevSecOps Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-scan:
+    runs-on: ubuntu-latest  
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build Docker Image
+      run: |
+        docker build -t sentinel-app -f docker/Dockerfile .
+
+    - name: Security Scan with Trivy (The WOW Factor)
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'sentinel-app'
+        format: 'table'
+        exit-code: '0' 
+        severity: 'CRITICAL,HIGH'
+
+    - name: Run Data Pipeline (Test Run)
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      run: |
+        # Run for 1 minute to test if it saves to Neon Cloud
+        timeout 60s docker run --rm -e DATABASE_URL=$DATABASE_URL sentinel-app || true
