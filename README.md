@@ -38,3 +38,20 @@ Real-time monitoring is achieved through a Grafana Cloud dashboard. The system t
 
 ## Resilience and Problem Solving: The Cloud-Native Pivot
 This project serves as a case study in infrastructure resilience. During development, the local WSL/Docker environment experienced a critical signature corruption failure. Rather than allowing infrastructure downtime to stall the project, the workflow was strategically pivoted to a Cloud-Native architecture using GitHub Actions and managed cloud services. This transition demonstrates the ability to maintain continuous delivery and system uptime regardless of local hardware limitations.
+
+## Deployment and Configuration
+
+### Environment Variables
+To run this pipeline, the following secret must be configured in GitHub Repository Secrets:
+* `DATABASE_URL`: The full PostgreSQL connection string provided by Neon.tech.
+
+### Local Execution (Manual)
+1. Install dependencies: `pip install -r app/requirements.txt`
+2. Export the database URL: `export DATABASE_URL='your_connection_string'`
+3. Run the application: `python app/main.py`
+
+### Cloud Execution (Automated)
+The pipeline is fully automated via `.github/workflows/devops-pipeline.yml`. Any push to the repository will trigger the build, security scan, and data ingestion processes.
+
+## Security Posture
+The project maintains a rigorous security posture by enforcing SSL/TLS for all database communications and performing regular security audits of the containerized environment during the build phase.
