@@ -10,3 +10,11 @@ The pipeline follows a modular architecture to ensure separation of concerns:
 3. **Orchestration & Automation:** GitHub Actions manages the end-to-end lifecycle, from code commit to container building and execution.
 4. **Security Layer:** Integrated DevSecOps practices using Aquasecurity Trivy for automated vulnerability scanning.
 5. **Observability Layer:** Real-time data visualization and infrastructure monitoring via Grafana Cloud.
+
+## Technical Stack
+* **Programming Language:** Python 3.9
+* **Database:** PostgreSQL (Neon Serverless)
+* **Containerization:** Docker (Optimized Multi-stage builds)
+* **CI/CD Platform:** GitHub Actions
+* **Security Scanning:** Trivy
+* **Monitoring:** Grafana Cloud
