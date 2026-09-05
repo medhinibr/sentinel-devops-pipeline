@@ -18,3 +18,8 @@ The pipeline follows a modular architecture to ensure separation of concerns:
 * **CI/CD Platform:** GitHub Actions
 * **Security Scanning:** Trivy
 * **Monitoring:** Grafana Cloud
+
+## Core DevOps Implementations
+
+### 1. Optimized Containerization
+The project utilizes a multi-stage Docker build strategy. This approach separates the build-time dependencies from the runtime environment, resulting in a lightweight production image. This reduces the attack surface and ensures faster deployment cycles in a cloud environment.
