@@ -32,3 +32,7 @@ A robust CI/CD pipeline is implemented to enforce security and reliability stand
 
 ### 3. Serverless Database Management
 By utilizing Neon PostgreSQL, the project implements a serverless database strategy. This allows for automatic scaling and provides a managed environment that removes the overhead of manual database maintenance.
+
+### 4. Enterprise Observability
+Real-time monitoring is achieved through a Grafana Cloud dashboard. The system tracks data ingestion frequency and market trends, providing the observability required for Site Reliability Engineering (SRE) standards.
+
