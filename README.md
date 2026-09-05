@@ -29,3 +29,6 @@ A robust CI/CD pipeline is implemented to enforce security and reliability stand
 * **Automated Builds:** Triggered on every push to the main branch.
 * **Vulnerability Assessment:** Trivy scans the Docker image for Critical and High vulnerabilities (CVEs) before execution.
 * **Secret Management:** Sensitive credentials, including database connection strings, are managed via GitHub Encrypted Secrets, preventing exposure in the source code.
+
+### 3. Serverless Database Management
+By utilizing Neon PostgreSQL, the project implements a serverless database strategy. This allows for automatic scaling and provides a managed environment that removes the overhead of manual database maintenance.
